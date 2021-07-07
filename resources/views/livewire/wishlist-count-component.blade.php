@@ -1,5 +1,4 @@
-<div class="wrap-icon right-section">
-@livewire('wishlist-count-component')
+
 <div class="wrap-icon-section minicart">
     <a href="#" class="link-direction">
         <i class="fa fa-shopping-basket" aria-hidden="true"></i>
