@@ -90,4 +90,6 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
     Route::get('/admin/coupons', AdminCouponsComponent::class)->name('admin.coupons');
     Route::get('/admin/coupon/add', AdminAddCouponsComponent::class)->name('admin.addcoupon');
     Route::get('/admin/coupon/edit/{coupon_id}', AdminEditCouponsComponent::class)->name('editcoupon');
+
+    Route::get('/admin/orders', AdminOrderComponent::class)->name('admin.orders');
 });
