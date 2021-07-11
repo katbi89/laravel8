@@ -30,6 +30,18 @@
 							    	<img src="{{ asset('assets/images/products') }}/{{ $product->image }}" alt="{{ $product->name }}" />
 							    </li>
 
+								@php
+									$iamges = explode(",", $product->images);
+								@endphp
+
+								@foreach($images as $image)
+									@if($image)
+										<li data-thumb="{{ asset('assets/images/products') }}/{{ $image }}">
+											<img src="{{ asset('assets/images/products') }}/{{ $image }}" alt="{{ $product->name }}" />
+										</li>
+									@endif
+								@endforeach
+
 							  </ul>
 							</div>
 						</div>
