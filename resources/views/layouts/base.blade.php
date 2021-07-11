@@ -102,7 +102,7 @@
 														<a href="{{ route('admin.orders') }}" title="All Orders">All Orders</a>
 													</li>
 													<li class="menu-item">
-														<a href="{{ route('admin.orders') }}" title="All Orders">Contact Messages</a>
+														<a href="{{ route('admin.contact') }}" title="Contact Messages">Contact Messages</a>
 													</li>
 													<li class="menu-item">
 														<a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
