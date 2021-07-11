@@ -20,15 +20,15 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <td>ID</td>
-                                    <td>Image</td>
-                                    <td>Title</td>
-                                    <td>Subtitle</td>
-                                    <td>Price</td>
-                                    <td>Link</td>
-                                    <td>Status</td>
-                                    <td>Date</td>
-                                    <td>Action</td>
+                                    <th>ID</th>
+                                    <th>Image</th>
+                                    <th>Title</th>
+                                    <th>Subtitle</th>
+                                    <th>Price</th>
+                                    <th>Link</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>

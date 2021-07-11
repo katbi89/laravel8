@@ -4,8 +4,8 @@ namespace App\Http\Livewire;
 
 use App\Models\Coupon;
 use Carbon\Carbon;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Livewire\Component;
-use Cart;
 use Illuminate\support\Facades\Auth;
 
 class CartComponent extends Component
@@ -20,17 +20,17 @@ class CartComponent extends Component
 
 
     public function increaseQuantity($rowId) {
-        $prodcut = Cart::instance('cart')->get($rowId);
-        $qty = $prodcut->qty + 1;
+        $product = Cart::instance('cart')->get($rowId);
+        $qty = $product->qty + 1;
         Cart::instance('cart')->update($rowId,$qty);
         $this->emitTo('cart-count-component', 'refreshComponent');
 
     }
 
     public function decreaseQuantity($rowId) {
-        $prodcut = Cart::instance('cart')->get($rowId);
-        $qty = $prodcut->qty -1;
-        Cart::instance('cart')->update($rowId, $qty);
+        $product = Cart::instance('cart')->get($rowId);
+        $qty = $product->qty - 1;
+        Cart::instance('cart')->update($rowId,$qty);
         $this->emitTo('cart-count-component', 'refreshComponent');
 
 

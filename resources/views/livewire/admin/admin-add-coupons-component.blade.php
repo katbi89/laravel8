@@ -21,7 +21,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Coupon Code</label>
                                 <div class="col-md-4">
-                                    <input type="text" placeholder="Coupon Code" class="form-control input-md" wire:model="code" wire:keyup="generateslug"/>
+                                    <input type="text" placeholder="Coupon Code" class="form-control input-md" wire:model="code"/>
                                     @error('code') <p class="text-danger">{{ $message }}</p> @enderror
                                 </div>
                             </div>
@@ -31,7 +31,7 @@
                                 <div class="col-md-4">
                                     <select class="form-control" wire:model="type">
                                         <option value="">Select</option>
-                                        <option value="fixed"></option>
+                                        <option value="fixed">Fixed</option>
                                         <option value="percent">Percent</option>
                                     </select>
                                     @error('type') <p class="text-danger">{{ $message }}</p> @enderror

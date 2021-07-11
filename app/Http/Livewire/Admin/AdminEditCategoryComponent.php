@@ -22,7 +22,7 @@ class AdminEditCategoryComponent extends Component
         $this->slug = $category->slug;
     }
 
-    public function generateslug()
+    public function generateSlug()
     {
         $this->slug = Str::slug($this->name);
     }

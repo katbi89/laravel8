@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Coupon;
 use Livewire\Component;
 
 class AdminAddCouponsComponent extends Component
@@ -34,7 +35,7 @@ class AdminAddCouponsComponent extends Component
         $coupon->code = $this->code;
         $coupon->code = $this->type;
         $coupon->code = $this->value;
-        $coupon->code = $this->vart_value;
+        $coupon->code = $this->cart_value;
         $coupon->expiry_date = $this->expiry_date;
         $coupon->save();
         session()->flash('message', 'Coupon has been created successfully!');
