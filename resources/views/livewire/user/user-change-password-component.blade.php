@@ -41,7 +41,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label"></label>
                                 <div class="col-md-4">
-                                    <button type="submit" class="btn btn-primary"></button>
+                                    <button type="submit" class="btn btn-primary">Change</button>
                                 </div>
                             </div>
                         </form>
