@@ -5,10 +5,8 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Cart;
 use App\Models\Category;
-
-
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class ShopComponent extends Component
 {

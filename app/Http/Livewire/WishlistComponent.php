@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use Cart;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Livewire\Component;
 
 class WishlistComponent extends Component

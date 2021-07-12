@@ -2,10 +2,9 @@
 
 namespace App\Http\Livewire;
 
-use Cart;
 use App\Models\Coupon;
 use Carbon\Carbon;
-use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Livewire\Component;
 use Illuminate\support\Facades\Auth;
 

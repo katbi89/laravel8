@@ -7,7 +7,7 @@ use Livewire\Component;
 use App\Models\OrderItem;
 use App\Models\Shipping;
 use App\Models\Transaction;
-use Cart;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 use Stripe;
 
