@@ -141,7 +141,7 @@
 
 						<div class="wrap-logo-top left-sectioLOG IN TO YOUR ACCOUNT
 						n">
-							<a href="index.html" class="link-to-home"><img src="{{ asset('assets/images/logo-top-1.png') }}" alt="mercado"></a>
+							<a href="/" class="link-to-home"><img src="{{ asset('assets/images/logo-top-1.png') }}" alt="mercado"></a>
 						</div>
 
 						<div class="wrap-search center-section">

@@ -30,7 +30,7 @@ class DetailsComponent extends Component
         $this->qty++;
     }
 
-    public function decreseQuantity() {
+    public function decreaseQuantity() {
         if($this->qty > 1){
             $this-> qty--;
         }

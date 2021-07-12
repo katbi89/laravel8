@@ -2,11 +2,13 @@
 
 namespace App\Http\Livewire;
 
+use Cart;
 use App\Models\Coupon;
 use Carbon\Carbon;
-use Gloudemans\Shoppingcart\Facades\Cart;
+use Gloudemans\Shoppingcart\Facades\Cart as FacadesCart;
 use Livewire\Component;
 use Illuminate\support\Facades\Auth;
+
 
 class CartComponent extends Component
 {
@@ -92,11 +94,13 @@ class CartComponent extends Component
                 $this->discount = session()->get('coupon')['value'];
             }
             else {
-                $this->discount = (Cart::instanse('cart')->subtotal() * session()->get('coupon')['value']) /100;
+
+                $this->discount = (Cart::instance('cart')->subtotal() * session()->get('coupon')['value'])/100;
+                
             }
-            $this->subtotalAfterDiscount = Cart::instance('cart')->subtotal() - $this->discount;
-            $this->taxAfterDiscount = ($this->subtotalAfterDiscount * config('cart.tax')) / 100;
-            $this->totalAfterDiscount = $this->subtotalAfterDiscount + $this->taxAfterDiscount;
+                $this->subtotalAfterDiscount = Cart::instance('cart')->subtotal() - $this->discount;
+                $this->taxAfterDiscount = ($this->subtotalAfterDiscount * config('cart.tax'))/100;
+                $this->totalAfterDiscount = $this->subtotalAfterDiscount + $this->taxAfterDiscount;
          }
     }
 
@@ -139,12 +143,12 @@ class CartComponent extends Component
     public function render()
     {
         if(session()->has('coupon')){
-            if(Cart::instance('cart')->subtotal() < session()->get('coupon') ['cart_value']){
+            if(Cart::instance('cart')->subtotal() < session()->get('coupon')['cart_value']){
                 session()->forget('coupon');
             
             }
             else{
-                $this->calculateDiscounts;
+                $this->calculateDiscounts();
             }
             
         }

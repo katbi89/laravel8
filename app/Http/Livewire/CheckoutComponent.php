@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Order;
 use Livewire\Component;
 use App\Models\OrderItem;
 use App\Models\Shipping;
@@ -21,7 +22,7 @@ class CheckoutComponent extends Component
     public $line1;
     public $line2;
     public $city;
-    public $provice;
+    public $province;
     public $country;
     public $zipcode;
 
@@ -32,7 +33,7 @@ class CheckoutComponent extends Component
     public $s_line1;
     public $s_line2;
     public $s_city;
-    public $s_provice;
+    public $s_province;
     public $s_country;
     public $s_zipcode;
 
@@ -54,7 +55,7 @@ class CheckoutComponent extends Component
             'line1' => 'required',
             'line2' => 'required',
             'city' => 'required',
-            'provice' => 'required',
+            'province' => 'required',
             'country' => 'required',
             'zipcode' => 'required',
             'paymentmode' => 'required'
@@ -70,7 +71,7 @@ class CheckoutComponent extends Component
             's_line1' => 'required',
             's_line2' => 'required',
             's_city' => 'required',
-            's_provice' => 'required',
+            's_province' => 'required',
             's_country' => 'required',
             's_zipcode' => 'required',
         ]);
@@ -95,7 +96,7 @@ class CheckoutComponent extends Component
             'line1' => 'required',
             'line2' => 'required',
             'city' => 'required',
-            'provice' => 'required',
+            'province' => 'required',
             'country' => 'required',
             'zipcode' => 'required',
             'paymentmode' => 'required'
@@ -123,7 +124,7 @@ class CheckoutComponent extends Component
         $order->line1 = $this->line1;
         $order->line2 = $this->line2;
         $order->city = $this->city;
-        $order->provice = $this->provice;
+        $order->province = $this->province;
         $order->country = $this->country;
         $order->zipcode = $this->zipcode;
         $order->status = 'ordered';
@@ -137,7 +138,7 @@ class CheckoutComponent extends Component
             $orderItem->order_id = $order->id;
             $orderItem->price = $item->price;
             $orderItem->quantity = $item->qty;
-            $orederItem->save();
+            $orderItem->save();
         }
 
         if($this->ship_to_different){
@@ -149,7 +150,7 @@ class CheckoutComponent extends Component
             's_line1' => 'required',
             's_line2' => 'required',
             's_city' => 'required',
-            's_provice' => 'required',
+            's_province' => 'required',
             's_country' => 'required',
             's_zipcode' => 'required',
         ]);
@@ -163,7 +164,7 @@ class CheckoutComponent extends Component
         $shipping->line1 = $this->s_line1;
         $shipping->line2 = $this->s_line2;
         $shipping->city = $this->s_city;
-        $shipping->provice = $this->s_provice;
+        $shipping->province = $this->s_province;
         $shipping->country = $this->s_country;
         $shipping->zipcode = $this->s_zipcode;
         $shipping->save();

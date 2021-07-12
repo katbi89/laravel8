@@ -1,6 +1,18 @@
 
 	<main id="main" class="main-site">
 
+
+		<style>
+			#main > div > div.main-content-area > form > div.summary.summary-checkout > div.summary-item.payment-method > div.wrap-address-billing > p:nth-child(4) > input {
+				font-size: 13px;
+				line-height: 19px;
+				display: inline-block;
+				height: 43px;
+				padding: 2px 20px;
+				width: 100%;
+				border: 1px solid #e6e6e6;
+			}
+		</style>
 		<div class="container">
 
 			<div class="wrap-breadcrumb">
@@ -31,7 +43,7 @@
 
 						</p>
 						<p class="row-in-form">
-							<label for="email">Email Addreess:</label>
+							<label for="email">Email Address:</label>
 							<input type="email" name="email" value="" placeholder="Type your email" wire:model="email">
 							@error('email') <span class="text-danger">{{$message}}</span> @enderror
 
@@ -50,7 +62,7 @@
 						</p>
 							<p class="row-in-form">
 							<label for="add">Line2:</label>
-							<input type="text" name="add" value="" placeholder="Line12" wire:model="line2">
+							<input type="text" name="add" value="" placeholder="Line2" wire:model="line2">
 							@error('line2') <span class="text-danger">{{$message}}</span> @enderror
 
 						</p>
@@ -88,7 +100,7 @@
 					</div>
 				</div>
 			</div>
-@if($ship_to_different)
+	@if($ship_to_different)
 					<div class="col-md-12">
 						<div class="wrap-address-billing">
 					<h3 class="box-title">Shipping Address</h3>
@@ -108,7 +120,7 @@
 
 						</p>
 						<p class="row-in-form">
-							<label for="email">Email Addreess:</label>
+							<label for="email">Email Address:</label>
 							<input type="email" name="email" value="" placeholder="Type your email" wire:model="s_email">
 							@error('s_email') <span class="text-danger">{{$message}}</span> @enderror
 
@@ -127,7 +139,7 @@
 						</p>
 							<p class="row-in-form">
 							<label for="add">Line2:</label>
-							<input type="text" name="add" value="" placeholder="Line12" wire:model="s_line2">
+							<input type="text" name="add" value="" placeholder="Line2" wire:model="s_line2">
 							@error('s_line2') <span class="text-danger">{{$message}}</span> @enderror
 
 						</p>
@@ -140,7 +152,7 @@
 
 						<p class="row-in-form">
 							<label for="city">Provice<span>*</span></label>
-							<input type="text" name="province" value="" placeholder="province" wire:model="s_province">
+							<input type="text" name="s_province" value="" placeholder="s_province" wire:model="s_province">
 							@error('s_province') <span class="text-danger">{{$message}}</span> @enderror
 
 						</p>
@@ -187,8 +199,8 @@
 									@error('exp_year') <span class="text-danger">{{$message}}</span> @enderror
 								</p>
 								<p class="row-in-form">
-									<label for="cvc">Card Number:</label>
-									<input type="password" name="cvc" value="" placeholder="CVC" wire:model="cvc">
+									<label for="cvc">CVC:</label>
+									<input type="password" name="cvc" class="cvc" value="" placeholder="CVC" wire:model="cvc">
 									@error('cvc') <span class="text-danger">{{$message}}</span> @enderror
 								</p>
 							</div>
@@ -204,14 +216,14 @@
 								<span>Debit / Credit Card</span>
 								<span class="payment-desc">There are many variations of passages of Lorem Ipsum available</span>
 							</label>
-							<label class="payment-method">
+							{{-- <label class="payment-method">
 								<input name="payment-method" id="payment-method-paypal" value="paypal" type="radio" wire:model="paymentmode">
 								<span>Paypal</span>
 								<span class="payment-desc">You can pay with your credit</span>
 								<span class="payment-desc">card if you don't have a paypal account</span>
 
-							</label>
-							@error('paymentmode') <span class="text-danger">{{$message}}</span> @enderror
+							</label> --}}
+							{{-- @error('paymentmode') <span class="text-danger">{{$message}}</span> @enderror --}}
 
 						</div>
 						@if(Session::has('checkout'))

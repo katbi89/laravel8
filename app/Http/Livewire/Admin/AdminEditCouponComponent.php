@@ -5,7 +5,7 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Coupon;
 use Livewire\Component;
 
-class AdminEditCouponsComponent extends Component
+class AdminEditCouponComponent extends Component
 {
     public $code;
     public $type;
@@ -20,7 +20,7 @@ class AdminEditCouponsComponent extends Component
         $this->type = $coupon->type;
         $this->value = $coupon->value;
         $this->cart_value = $coupon->cart_value;
-        $this->coupon_id = $coupon->coupon_id;
+        $this->coupon_id = $coupon->id;
         $this->expiry_date = $coupon->expiry_date;
 
     }
@@ -45,15 +45,15 @@ class AdminEditCouponsComponent extends Component
         ]);
         $coupon = Coupon::find($this->coupon_id);
         $coupon->code = $this->code;
-        $coupon->code = $this->type;
-        $coupon->code = $this->value;
-        $coupon->code = $this->cart_value;
+        $coupon->type = $this->type;
+        $coupon->value = $this->value;
+        $coupon->cart_value = $this->cart_value;
         $coupon->expiry_date = $this->expiry_date; 
         $coupon->save();
         session()->flash('message', 'Coupon has been updated successfully!');
     }
     public function render()
     {
-        return view('livewire.admin.admin-edit-coupons-component')->layout('layouts.base');
+        return view('livewire.admin.admin-edit-coupon-component')->layout('layouts.base');
     }
 }

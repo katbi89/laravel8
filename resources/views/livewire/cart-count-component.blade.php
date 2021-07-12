@@ -1,11 +1,11 @@
-<div class="wrap-icon-section wishlist">
+<div class="wrap-icon-section minicart">
     <a href="{{ route('product.cart') }}" class="link-direction">
-        <i class="fa fa-heart" aria-hidden="true"></i>
+        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
         <div class="left-info">
-            @if(Cart::instance('wishlist')->count() > 0)
-                <span class="index">{{ Cart::instance('wishlist')->count() > 0 }} item</span>
+            @if(Cart::instance('cart')->count() > 0)
+                <span class="index">{{ Cart::instance('cart')->count() }} items</span>
             @endif
-            <span class="title">Wishlist</span>
+                <span class="title">CART</span>
         </div>
     </a>
 </div>
