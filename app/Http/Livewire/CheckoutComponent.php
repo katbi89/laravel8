@@ -11,6 +11,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 use Stripe;
 
+
 class CheckoutComponent extends Component
 {
     public $ship_to_different;
@@ -102,8 +103,8 @@ class CheckoutComponent extends Component
             'paymentmode' => 'required'
         ]);
 
-                if($this->paymentmode == 'card'){
-            $this->validate($fields,[
+        if($this->paymentmode == 'card'){
+            $this->validate([
                 'card_no' => 'required|numeric',
                 'exp_month' => 'required|numeric',
                 'exp_year' => 'required|numeric',
@@ -172,6 +173,7 @@ class CheckoutComponent extends Component
 
         if($this->paymentmode == 'cod'){
             
+            
             $this->makeTransaction($order->id, 'pending');
             $this->resetCard();
 
@@ -181,21 +183,22 @@ class CheckoutComponent extends Component
 
             try{
                 $token = $stripe->tokens()->create([
-                    'card' => [
-                        'number' => $this->card_no,
-                        'exp_month' => $this->exp_month,
-                        'exp_year' => $this->exp_year,
-                        'cvc' => $this->cvc
-                    ]
-                ]);
+                        'card' => [
+                            'number' => $this->card_no,
+                            'exp_month' => $this->exp_month,
+                            'exp_year' => $this->exp_year,
+                            'cvc' => $this->cvc
+                                ]
+                            ]);
 
                 if(!isset($token['id'])){
                     session()->flash('stripe_error', 'The stripe token was not generated correctly!');
                     $this->thankyou = 0;
                 }
 
-                $customer = $stripe->customer()->create([
+                $customer = $stripe->customers()->create([
                     'name' => $this->firstname . ' ' . $this->lastname,
+                    'email' => $this->email,
                     'phone' =>$this->mobile,
                     'address' => [
                         'line1' => $this->line1,
@@ -212,8 +215,8 @@ class CheckoutComponent extends Component
                             'city' => $this->city,
                             'state' => $this->province,
                             'country' => $this->country
+                            ],
                         ],
-                    ],
 
                     'source' => $token['id']
                 
@@ -250,7 +253,7 @@ class CheckoutComponent extends Component
     }
 
     public function makeTransaction($order_id, $status) {
-        $transaction = new Transaction();
+            $transaction = new Transaction();
             $transaction->user_id = Auth::user()->id;
             $transaction->order_id = $order_id;
             $transaction->mode = $this->paymentmode;

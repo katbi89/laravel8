@@ -3,7 +3,7 @@
 
 
 		<style>
-			#main > div > div.main-content-area > form > div.summary.summary-checkout > div.summary-item.payment-method > div.wrap-address-billing > p:nth-child(4) > input {
+			.wrap-address-billing .row-in-form input[type=password], .wrap-address-billing .row-in-form input[type=text], .wrap-address-billing .row-in-form input[type=number] {
 				font-size: 13px;
 				line-height: 19px;
 				display: inline-block;
