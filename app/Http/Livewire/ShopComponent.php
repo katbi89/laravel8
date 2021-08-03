@@ -7,6 +7,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Category;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Auth;
 
 class ShopComponent extends Component
 {
@@ -33,13 +34,15 @@ class ShopComponent extends Component
     }
 
 
-    public function addToWishlist($product_id, $product_name, $product_price){
-        Cart::instance('wishlist')->add($product_id, $product_name,1, $product_price)->associate('App\Models\Product');
+    public function addToWishlist($product_id, $product_name, $product_price)
+    {
+        Cart::instance('wishlist')->add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
         $this->emitTo('wishlist-count-component', 'refreshComponent');
     }
 
-    public function removeFromWishlist($product_id) {
-        foreach(Cart::instance('wishlist')->content() as $witem){
+    public function removeFromWishlist($product_id)
+    {
+        foreach (Cart::instance('wishlist')->content() as $witem) {
             if ($witem->id == $product_id) {
                 Cart::instance('wishlist')->remove($witem->rowId);
                 $this->emitTo('wishlist-count-component', 'refreshComponent');
@@ -63,6 +66,9 @@ class ShopComponent extends Component
 
         $categories = Category::all();
 
+        if (Auth::check()) {
+            Cart::instance('cart')->store(Auth::user()->email);
+        }
         return view('livewire.shop-component', ['products' => $products, 'categories' => $categories])->layout('layouts.base');
     }
 }
