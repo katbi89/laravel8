@@ -25,6 +25,7 @@
                                     <th>Phone</th>
                                     <th>Comment</th>
                                     <th>Created At</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,6 +40,7 @@
                                         <td>{{ $contact->phone }}</td>
                                         <td>{{ $contact->comment }}</td>
                                         <td>{{ $contact->created_at }}</td>
+                                        <td><a href="#" onclick="confirm('Are You sure, you want delete this message? ') || event.stopImmediatePropagation()" style="margin-left:10px" wire:click.prevent="#"><i class="fa fa-times fa-2x text-danger"></i></a></td>
                                     </tr>
                                 @endforeach
                             </tbody>

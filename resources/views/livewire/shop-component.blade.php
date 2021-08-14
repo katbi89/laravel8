@@ -15,7 +15,7 @@
 
 					<div class="banner-shop">
 						<a href="#" class="banner-link">
-							<figure><img src="{{ asset('assets/images/shop-banner.jpg') }}" alt=""></figure>
+							<figure><img src="{{ asset('assets/images/shop-banner.png') }}" alt=""></figure>
 						</a>
 					</div>
 
@@ -191,7 +191,7 @@
 								<li class="list-item"><a class="filter-link " href="#">xl</a></li>
 							</ul>
 							<div class="widget-banner">
-								<figure><img src="{{ asset('assets/images/size-banner-widget.jpg') }}" width="270" height="331" alt=""></figure>
+								<figure><img src="{{ asset('assets/images/size-banner-widget.png') }}" width="270" height="331" alt=""></figure>
 							</div>
 						</div>
 					</div><!-- Size -->
@@ -204,7 +204,7 @@
 									<div class="product product-widget-style">
 										<div class="thumbnnail">
 											<a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-												<figure><img src="{{ asset('assets/images/products/digital_01.jpg') }}" alt=""></figure>
+												<figure><img src="{{ asset('assets/images/products/digital_19.png') }}" alt=""></figure>
 											</a>
 										</div>
 										<div class="product-info">
@@ -218,7 +218,7 @@
 									<div class="product product-widget-style">
 										<div class="thumbnnail">
 											<a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-												<figure><img src="{{ asset('assets/images/products/digital_17.jpg') }}" alt=""></figure>
+												<figure><img src="{{ asset('assets/images/products/digital_17.png') }}" alt=""></figure>
 											</a>
 										</div>
 										<div class="product-info">
@@ -232,7 +232,7 @@
 									<div class="product product-widget-style">
 										<div class="thumbnnail">
 											<a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-												<figure><img src="{{ asset('assets/images/products/digital_18.jpg') }}" alt=""></figure>
+												<figure><img src="{{ asset('assets/images/products/digital_18.png') }}" alt=""></figure>
 											</a>
 										</div>
 										<div class="product-info">
@@ -246,7 +246,7 @@
 									<div class="product product-widget-style">
 										<div class="thumbnnail">
 											<a href="detail.html" title="Radiant-360 R6 Wireless Omnidirectional Speaker [White]">
-												<figure><img src="{{ asset('assets/images/products/digital_20.jpg') }}" alt=""></figure>
+												<figure><img src="{{ asset('assets/images/products/digital_19.png') }}" alt=""></figure>
 											</a>
 										</div>
 										<div class="product-info">

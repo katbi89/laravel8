@@ -51,7 +51,7 @@
                                 <div class="col-md-4">
                                     <input type="file" class="input-file" wire:model="newimage"/>
                                     @if($newimage)
-                                        <img src="{{ $image->temporaryUrl() }}" alt="" width="120">
+                                        <img src="{{ $newimage->temporaryUrl() }}" alt="" width="120">
                                     @else
                                         <img src="{{asset('assets/images/sliders')}}/{{$image}}" width="120" alt="">
                                     @endif
@@ -61,7 +61,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Status</label>
                                 <div class="col-md-4">
-                                    <select class="form-control">
+                                    <select class="form-control" wire:model="status">
                                         <option value="0">Inactive</option>
                                         <option value="1">Active</option>
                                     </select>
@@ -71,7 +71,7 @@
                             <div class="form-group">
                                 <label class="col-md-4 control-label"></label>
                                 <div class="col-md-4">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
                             </div>
 

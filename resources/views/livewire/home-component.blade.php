@@ -4,20 +4,20 @@
         <!--MAIN SLIDE-->
         <div class="wrap-main-slide">
             <div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true" data-dots="false">
+            
+                    @foreach ($sliders as $slide)
 
-                @foreach ($sliders as $slide)
-
-                    <div class="item-slide">
-                        <img src="{{ asset('assets/images/sliders')}}/{{$slide->image}}" alt="" class="img-slide">
-                        <div class="slide-info slide-1">
-                            <h2 class="f-title"><b>{{ $slide->title }}</b></h2>
-                            <span class="subtitle">{{ $slide->subtitle }}</span>
-                            <p class="sale-info">Only price: <span class="price">${{ $slide->price }}</span></p>
-                            <a href="{{ $slide->link }}" class="btn-link">Shop Now</a>
+                        <div class="item-slide">
+                            <img src="{{ asset('assets/images/sliders')}}/{{$slide->image}}" alt="" class="img-slide">
+                            <div class="slide-info slide-1">
+                                <h2 class="f-title"><b style="color: ghostwhite">{{ $slide->title }}</b></h2>
+                                <span class="subtitle">{{ $slide->subtitle }}</span>
+                                <p class="sale-info">Only price: <span class="price">${{ $slide->price }}</span></p>
+                                <a href="{{ $slide->link }}" class="btn-link">Shop Now</a>
+                            </div>
                         </div>
-                    </div>
 
-                @endforeach
+                    @endforeach
 
             </div>
         </div>
@@ -26,12 +26,12 @@
         <div class="wrap-banner style-twin-default">
             <div class="banner-item">
                 <a href="#" class="link-banner banner-effect-1">
-                    <figure><img src="{{ asset('assets/images/home-1-banner-1.jpg') }}" alt="" width="580" height="190"></figure>
+                    <figure><img src="{{ asset('assets/images/home-1-banner-1.png') }}" alt="" width="580" height="190"></figure>
                 </a>
             </div>
             <div class="banner-item">
                 <a href="#" class="link-banner banner-effect-1">
-                    <figure><img src="{{ asset('assets/images/home-1-banner-2.jpg') }}" alt="" width="580" height="190"></figure>
+                    <figure><img src="{{ asset('assets/images/home-1-banner-2.png') }}" alt="" width="580" height="190"></figure>
                 </a>
             </div>
         </div>
@@ -108,7 +108,7 @@
             <h3 class="title-box">Product Categories</h3>
             <div class="wrap-top-banner">
                 <a href="#" class="link-banner banner-effect-2">
-                    <figure><img src="{{ asset('assets/images/fashion-accesories-banner.jpg') }}" width="1170" height="240" alt=""></figure>
+                    <figure><img src="{{ asset('assets/images/fashion-accesories-banner.png') }}" width="1170" height="240" alt=""></figure>
                 </a>
             </div>
             <div class="wrap-products">

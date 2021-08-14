@@ -100,6 +100,9 @@
 									<a class="btn btn-increase" href="#" wire:click.prevent="increaseQuantity"></a>
 								</div>
 							</div>
+							
+								
+							
 							<div class="wrap-butons">
 								@if ($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
 									<a href="#" class="btn add-to-cart" wire:click.prevent="store({{ $product->id }},'{{ $product->name }}', {{ $product->sale_price }})">Add to Cart</a>
@@ -111,6 +114,7 @@
                                     <a href="#" class="btn btn-wishlist">Add Wishlist</a>
                                 </div>
 							</div>
+							
 						</div>
 						<div class="advance-info">
 							<div class="tab-control normal">
@@ -166,7 +170,7 @@
 												@foreach($product->orderItems->where('rstatus', 1) as $orderItem)
 													<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="li-comment-20">
 														<div id="comment-20" class="comment_container"> 
-															<img alt="" src="{{ asset('assets/images/author-avata.jpg') }}" height="80" width="80">
+															<img alt="" src="{{ asset('assets/images/author-avata.png') }}" height="80" width="80">
 															<div class="comment-text">
 																<div class="star-rating">
 																	<span class="width-{{ $orderItem->review->rating * 20 }}-percent">Rated <strong class="rating">{{ $orderItem->review->rating }}</strong> out of 5</span>

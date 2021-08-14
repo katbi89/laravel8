@@ -7,6 +7,8 @@ use Livewire\Component;
 
 class AdminContactComponent extends Component
 {
+
+
     public function render()
     {
         $contacts = Contact::paginate(12);
